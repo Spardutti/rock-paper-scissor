@@ -18,22 +18,22 @@ let ComputerScr = 0;
 function roundPlay(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "scissor") {
         playerScr++;
-        return "Rock beat scissors! Player Win!";
+        return "Rock beat scissors! Player Wins this round";
     } if (playerSelection == "paper" && computerSelection == "rock") {
         playerScr++
-        return "Paper beat rock! Player Win";
+        return "Paper beat rock! Player Wins this round";
     } if (playerSelection == "scissor" && computerSelection == "paper") {
         playerScr++
-        return "Scissor beat paper! Player Win!"
+        return "Scissor beat paper! Player Wins this round!"
     } if (computerSelection == "rock" && playerSelection == "scissor") {
         ComputerScr++
-        return "Rock beat scissor! Computer Win!";
+        return "Rock beat scissor! Computer Wins this round";
     } if (computerSelection == "paper" && playerSelection == "rock") {
         ComputerScr++
-        return "Paper beat rock! Computer Win"
+        return "Paper beat rock! Computer Wins this round"
     } if (computerSelection == "scissor" && playerSelection == "paper") {
         ComputerScr++
-        return "Scissor beat paper! Computer Win!"
+        return "Scissor beat paper! Computer Wins this round"
     } else return ("Draw")
 }
 // game will repeat 5 times and check who have won more rounds to pick a winner
@@ -42,7 +42,6 @@ function game() {
         playerSelection = prompt("Choose rock paper or scissor").toLowerCase();
         //check if user used the correct words
         if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissor") {
-            console.log(playerSelection)
             computerSelection = computerPlay();
             console.log(roundPlay(playerSelection, computerSelection));
             console.log(playerScr, ComputerScr)
@@ -54,11 +53,11 @@ function game() {
     }
     //if there is a  draw on scores, play one more round
     if (playerScr == ComputerScr) {
-        console.log(roundPlay(playerSelection, computerSelection))
+        console.log("We have a tie: " + playerScr + " to " + ComputerScr);
     }
     //check for winner
     else if (playerScr > ComputerScr) {
-        console.log("Plaer wins " + playerScr + " to " + ComputerScr)
+        console.log("Player wins " + playerScr + " to " + ComputerScr)
     } else {
         console.log("Computer wins: " + ComputerScr + " to " + playerScr);
     }
