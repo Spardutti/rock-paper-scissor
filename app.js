@@ -11,10 +11,10 @@ function computerPlay() {
         return "scissor"
     }
 }
-//ser both scores
+//set both scores to 0
 let playerScr = 0;
 let ComputerScr = 0;
-//create a func that will play each round and add the score to the winner
+//create a func that will play each round and add 1 to the winner
 function roundPlay(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "scissor") {
         playerScr++;
@@ -36,11 +36,11 @@ function roundPlay(playerSelection, computerSelection) {
         return "Scissor beat paper! Computer Win!"
     } else return ("Draw")
 }
-//Func game will repeat 5 times and check who have won more rounds to pick a winner
+// game will repeat 5 times and check who have won more rounds to pick a winner
 function game() {
     for (let round = 1; round <= 5; round++) {
         playerSelection = prompt("Choose rock paper or scissor").toLowerCase();
-        //check if user userd the correct words
+        //check if user used the correct words
         if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissor") {
             console.log(playerSelection)
             computerSelection = computerPlay();
@@ -52,7 +52,7 @@ function game() {
             round--
         }
     }
-    //if is a draw on scores, play one more round
+    //if there is a  draw on scores, play one more round
     if (playerScr == ComputerScr) {
         console.log(roundPlay(playerSelection, computerSelection))
     }
